@@ -7,11 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.0] - 2026-03-11
 
-### Added
-- Initial release of `brender` - Cloudflare Browser Rendering Crawl API wrapper
+### 🎉 Initial Release
+
+First stable release of `brender` - A sleek wrapper for Cloudflare's Browser Rendering Crawl API.
+
+### ✨ Features
 - **CLI Tool**: `brender` command for crawling websites from terminal
   - `brender <url>` - Start a crawl job
-  - `brender --status <job-id>` - Check job status
+  - `brender --status <job-id>` - Check job status  
   - `brender --wait` - Wait for completion
   - Support for `--format`, `--limit`, `--depth`, `--output` options
   - `--include` and `--exclude` path patterns
@@ -31,14 +34,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Modified since / max age filters
   - Render vs static mode
 
-### Technical Details
+### 🔗 Links
+- **Repository**: https://github.com/ek-mc/brender (private)
+- **Releases**: https://github.com/ek-mc/brender/releases
+- **NPM**: https://www.npmjs.com/package/brender (after publish)
+
+### 📦 Technical Details
 - Zero runtime dependencies
 - Node.js 18+ required
 - Built with TypeScript
 - MIT Licensed
-
-### Repository
-- https://github.com/ek-mc/brender (private)
 
 ---
 
