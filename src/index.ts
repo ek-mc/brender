@@ -91,7 +91,7 @@ export class BrenderClient {
       throw new Error(`Crawl failed: ${response.status} ${response.statusText} - ${error}`);
     }
 
-    const data = await response.json();
+    const data: any = await response.json();
     
     if (!data.success) {
       throw new Error(`Crawl failed: ${data.errors?.map((e: any) => e.message).join(', ')}`);
@@ -123,7 +123,7 @@ export class BrenderClient {
       throw new Error(`Failed to get job: ${response.status} ${response.statusText} - ${error}`);
     }
 
-    const data = await response.json();
+    const data: any = await response.json();
 
     if (!data.success) {
       throw new Error(`Failed to get job: ${data.errors?.map((e: any) => e.message).join(', ')}`);
