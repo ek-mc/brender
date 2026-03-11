@@ -9,22 +9,35 @@
   },
   "files": [
     "dist",
-    "README.md"
+    "README.md",
+    "LICENSE"
   ],
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build && npm test",
+    "test": "echo 'No tests yet' && exit 0"
   },
   "keywords": [
     "cloudflare",
     "browser-rendering",
     "crawl",
     "scraper",
-    "web-crawler"
+    "web-crawler",
+    "ai",
+    "rag",
+    "scraping"
   ],
   "author": "ek-mc",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ek-mc/brender.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ek-mc/brender/issues"
+  },
+  "homepage": "https://github.com/ek-mc/brender#readme",
   "dependencies": {},
   "devDependencies": {
     "@types/node": "^20.0.0",
