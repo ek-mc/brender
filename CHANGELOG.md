@@ -1,0 +1,76 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [1.0.0] - 2026-03-11
+
+### Added
+- Initial release of `brender` - Cloudflare Browser Rendering Crawl API wrapper
+- **CLI Tool**: `brender` command for crawling websites from terminal
+  - `brender <url>` - Start a crawl job
+  - `brender --status <job-id>` - Check job status
+  - `brender --wait` - Wait for completion
+  - Support for `--format`, `--limit`, `--depth`, `--output` options
+  - `--include` and `--exclude` path patterns
+  - `--no-render` for static site crawling
+- **Library API**: `BrenderClient` class for programmatic use
+  - `crawl(options)` - Start a crawl job
+  - `getJob(jobId)` - Get job status and results
+  - `waitForCompletion(jobId)` - Poll until job completes
+  - `crawlAndWait(options)` - Combined crawl + wait
+- **TypeScript Support**: Full type definitions for all APIs
+- **Authentication**: via `CF_ACCOUNT_ID` and `CF_API_TOKEN` environment variables
+- **Output Formats**: HTML, Markdown, JSON
+- **Configuration Options**:
+  - Crawl depth control
+  - Page limits
+  - Include/exclude URL patterns
+  - Modified since / max age filters
+  - Render vs static mode
+
+### Technical Details
+- Zero runtime dependencies
+- Node.js 18+ required
+- Built with TypeScript
+- MIT Licensed
+
+### Repository
+- https://github.com/ek-mc/brender (private)
+
+---
+
+## Usage Examples
+
+### CLI
+```bash
+# Set credentials
+export CF_ACCOUNT_ID="your-account-id"
+export CF_API_TOKEN="your-api-token"
+
+# Basic crawl
+brender https://example.com
+
+# With options
+brender https://example.com --format markdown --limit 50 --wait
+
+# Check status
+brender --status <job-id>
+```
+
+### Library
+```typescript
+import { BrenderClient } from 'brender';
+
+const client = new BrenderClient({
+  accountId: process.env.CF_ACCOUNT_ID!,
+  apiToken: process.env.CF_API_TOKEN!,
+});
+
+const result = await client.crawlAndWait({
+  url: 'https://example.com',
+  format: 'markdown',
+});
+```
