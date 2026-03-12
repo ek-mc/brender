@@ -1,6 +1,6 @@
 {
   "name": "brender",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Cloudflare Browser Rendering Crawl API wrapper",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
