@@ -183,10 +183,12 @@ You can view all runs here: https://github.com/ek-mc/brender/actions/workflows/c
 
 ## 🔗 Links
 
+- [📦 NPM Package Page](https://www.npmjs.com/package/brender)
+- [👤 NPM Publisher](https://www.npmjs.com/~ek-mc)
+- [🐙 GitHub Repository](https://github.com/ek-mc/brender)
 - [📘 Cloudflare Browser Rendering Docs](https://developers.cloudflare.com/browser-rendering/)
 - [📗 Crawl Endpoint Docs](https://developers.cloudflare.com/browser-rendering/rest-api/crawl-endpoint/)
 - [🐛 Report Issues](https://github.com/ek-mc/brender/issues)
-- [📦 NPM Package](https://www.npmjs.com/package/brender)
 
 ---
 
