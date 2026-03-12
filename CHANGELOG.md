@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+- GitHub Actions CI workflow at `.github/workflows/ci.yml`.
+- Standard repository docs: `CONTRIBUTING.md` and `SECURITY.md`.
+
+### Changed
+- README now includes a CI badge and a dedicated **Development & CI** section.
+- Documented workflow triggers and checks (`npm ci`, `npm run build`, `npm test`) in README.
+
 ## [1.0.0] - 2026-03-11
 
 ### 🎉 Initial Release
