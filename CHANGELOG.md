@@ -9,11 +9,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - GitHub Actions CI workflow at `.github/workflows/ci.yml`.
+- npm Trusted Publishing workflow at `.github/workflows/publish.yml`.
 - Standard repository docs: `CONTRIBUTING.md` and `SECURITY.md`.
 
 ### Changed
-- README now includes a CI badge and a dedicated **Development & CI** section.
+- README now includes direct npm/GitHub links and an explicit npm package page reference.
 - Documented workflow triggers and checks (`npm ci`, `npm run build`, `npm test`) in README.
+
+## [1.0.1] - 2026-03-12
+
+### Changed
+- Prepared release and publishing metadata for npm.
+- Hardened `.gitignore` to exclude env files, npm auth config, logs, and editor artifacts.
+
+### 🔗 Links
+- **Repository**: https://github.com/ek-mc/brender (public)
+- **NPM**: https://www.npmjs.com/package/brender
 
 ## [1.0.0] - 2026-03-11
 
@@ -45,9 +56,9 @@ First stable release of `brender` - A sleek wrapper for Cloudflare's Browser Ren
   - Render vs static mode
 
 ### 🔗 Links
-- **Repository**: https://github.com/ek-mc/brender (private)
+- **Repository**: https://github.com/ek-mc/brender (public)
 - **Releases**: https://github.com/ek-mc/brender/releases
-- **NPM**: https://www.npmjs.com/package/brender (after publish)
+- **NPM**: https://www.npmjs.com/package/brender
 
 ### 📦 Technical Details
 - Zero runtime dependencies
