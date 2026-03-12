@@ -3,6 +3,7 @@
 [![npm version](https://img.shields.io/npm/v/brender.svg)](https://www.npmjs.com/package/brender)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D18-brightgreen.svg)](https://nodejs.org/)
+[![CI](https://github.com/ek-mc/brender/actions/workflows/ci.yml/badge.svg)](https://github.com/ek-mc/brender/actions/workflows/ci.yml)
 
 > **B**rowser **Render**ing - A sleek wrapper for Cloudflare's Browser Rendering Crawl API
 
@@ -165,6 +166,18 @@ Poll until job completes.
 ### `crawlAndWait(options, pollInterval?, timeout?)`
 
 Start crawl and wait for completion.
+
+---
+
+## 🧪 Development & CI
+
+This repository uses GitHub Actions for continuous integration.
+
+- Workflow: `.github/workflows/ci.yml`
+- Triggers: pushes to `main` and pull requests
+- Checks: `npm ci`, `npm run build`, `npm test`
+
+You can view all runs here: https://github.com/ek-mc/brender/actions/workflows/ci.yml
 
 ---
 
