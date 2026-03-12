@@ -185,7 +185,9 @@ See [CHANGELOG.md](./CHANGELOG.md) for version history.
 
 ## 📄 License
 
-MIT © [ek-mc](https://github.com/ek-mc)
+See [LICENSE](LICENSE).
+
+License: MIT
 
 ---
 
