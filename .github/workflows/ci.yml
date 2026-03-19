@@ -6,8 +6,9 @@ on:
   pull_request:
 
 jobs:
-  build:
+  ci:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -15,14 +16,55 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: npm
+          node-version: 22
 
-      - name: Install deps
-        run: npm ci
+      - name: Detect package manager
+        id: pm
+        shell: bash
+        run: |
+          if [ -f pnpm-lock.yaml ] || grep -q '"packageManager"[[:space:]]*:[[:space:]]*"pnpm@' package.json; then
+            echo "pm=pnpm" >> "$GITHUB_OUTPUT"
+          else
+            echo "pm=npm" >> "$GITHUB_OUTPUT"
+          fi
 
-      - name: Build
-        run: npm run build
+      - name: Enable Corepack (pnpm)
+        if: steps.pm.outputs.pm == 'pnpm'
+        run: corepack enable
 
-      - name: Test
-        run: npm test
+      - name: Install dependencies (pnpm)
+        if: steps.pm.outputs.pm == 'pnpm'
+        run: |
+          if [ -f pnpm-lock.yaml ]; then
+            pnpm install --frozen-lockfile
+          else
+            pnpm install
+          fi
+
+      - name: Install dependencies (npm)
+        if: steps.pm.outputs.pm == 'npm'
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            npm install
+          fi
+
+      - name: Lint (if present)
+        run: ${{ steps.pm.outputs.pm }} run lint --if-present
+
+      - name: Type check / check (if present)
+        shell: bash
+        run: |
+          PM='${{ steps.pm.outputs.pm }}'
+          $PM run check --if-present
+          $PM run typecheck --if-present
+
+      - name: Build (if present)
+        run: ${{ steps.pm.outputs.pm }} run build --if-present
+
+      - name: Test (if present)
+        run: ${{ steps.pm.outputs.pm }} run test --if-present
+
+      - name: Pack dry-run
+        run: npm pack --dry-run
