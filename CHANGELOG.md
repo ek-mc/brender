@@ -7,14 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.5] - 2026-03-19
+
 ### Added
-- GitHub Actions CI workflow at `.github/workflows/ci.yml`.
-- npm Trusted Publishing workflow at `.github/workflows/publish.yml`.
-- Standard repository docs: `CONTRIBUTING.md` and `SECURITY.md`.
+- Basic automated tests for `BrenderClient` request/response mapping in `test/client.test.cjs`.
 
 ### Changed
-- README now includes direct npm/GitHub links and an explicit npm package page reference.
-- Documented workflow triggers and checks (`npm ci`, `npm run build`, `npm test`) in README.
+- Updated test script to run real Node tests (`node --test`) after build.
+- CI/dependency updates merged from Dependabot PRs.
 
 ## [1.0.1] - 2026-03-12
 
