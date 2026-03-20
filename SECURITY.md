@@ -2,9 +2,9 @@
 
 ## Reporting a Vulnerability
 
-If you discover a security issue, please avoid opening a public issue first.
+If you discover a security issue, please open a GitHub issue or PR in this repository.
 
-Report privately to the maintainer with:
+Include:
 - Description of the issue
 - Reproduction steps
 - Potential impact
