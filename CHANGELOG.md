@@ -100,3 +100,8 @@ const result = await client.crawlAndWait({
   format: 'markdown',
 });
 ```
+
+## 2026-04-29
+
+- Added basic GitHub Actions CI workflow (`.github/workflows/basic-ci.yml`).
+- Maintenance: closed stale dependency PR queue for cleaner triage (where applicable).
