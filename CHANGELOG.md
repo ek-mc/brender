@@ -5,7 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [1.0.6] - 2026-11-26
+
+### Changed
+- Owner-approved tooling majors: @types/node 26.4.0 and checkout/setup-node 7.0.0 across workflows.
+- TypeScript 6 to 7.0.2; retain public API and existing application runtime floor.
+
+- Add compiled CLI, SDK error propagation and terminal polling regression tests (2 → 5 tests).
+
+### Upgrade Notes
+- Development tooling only; no intentional application API, data or runtime deployment changes.
+- Actions v7 uses Node 24 on GitHub-hosted runners; application Node matrix unchanged.
 
 ## [1.0.5] - 2026-03-19
 
